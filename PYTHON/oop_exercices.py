@@ -385,9 +385,42 @@ class Media(Video, Audio):
         Video.__init__(self, titre, duree, categorie)   
         Audio.__init__(self, titre, artiste)
 
-media1 = Media("The hobbit", 180, "Fantasy", "Howard Shore")
-media1.ecouter_audio()
-media1.regarder_video()
-media1.stop_audio()
-media1.stop_video()
+# media1 = Media("The hobbit", 180, "Fantasy", "Howard Shore")
+# media1.ecouter_audio()
+# media1.regarder_video()
+# media1.stop_audio()
+# media1.stop_video()
 
+# Exercice 13: surcharge operateur
+class Vecteur4D:
+    """cette classe definit un vecteur de 4 dimensions elle offre la possibilite d additionner, multiplier, soustraire deux vecteurs
+     ou diviser un vecteur par un scalaire"""
+    
+    def __init__(self, args: list) -> None:
+        """constructeur de classe permet d extraire les coordonnees du vecteur d une liste"""
+        self.x = args[0]
+        self.y = args[1]
+        self.u = args[2]
+        self.v = args[3]
+    
+    def __add__(self, vect) -> list:
+        """cette permet d additionner la classe vecteur avec un autre"""
+        return [self.x + vect.x , self.y + vect.y, self.u + vect.u , self.v + vect.v]
+    
+    def __mul__(self, vect) -> list:
+        """cette permet de multiplier la classe vecteur avec un autre"""
+        return [self.x * vect.x , self.y * vect.y, self.u * vect.u , self.v * vect.v]
+    
+    def __sub__(self, vect) -> list:
+        """cette permet de soustraire la classe vecteur avec un autre"""
+        return [self.x - vect.x , self.y - vect.y, self.u - vect.u , self.v - vect.v]
+    def __truediv__(self, scal) -> list:
+        """cette permet de diviser la classe vecteur par un scalaire"""
+        return [self.x / scal , self.y / scal, self.u / scal , self.v / scal]
+    
+vecteur1 = Vecteur4D([2, 4, 6, 8])
+vecteur2 = Vecteur4D([1, 2, 3, 4])
+print("v1 + v2 = ", vecteur1 + vecteur2)
+print("v1 - v2 = ", vecteur1 - vecteur2)
+print("v1 * v2 = ", vecteur1 * vecteur2)
+print("V2 / 2 = ", vecteur2/2)
