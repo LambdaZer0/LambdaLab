@@ -418,9 +418,50 @@ class Vecteur4D:
         """cette permet de diviser la classe vecteur par un scalaire"""
         return [self.x / scal , self.y / scal, self.u / scal , self.v / scal]
     
-vecteur1 = Vecteur4D([2, 4, 6, 8])
-vecteur2 = Vecteur4D([1, 2, 3, 4])
-print("v1 + v2 = ", vecteur1 + vecteur2)
-print("v1 - v2 = ", vecteur1 - vecteur2)
-print("v1 * v2 = ", vecteur1 * vecteur2)
-print("V2 / 2 = ", vecteur2/2)
+# vecteur1 = Vecteur4D([2, 4, 6, 8])
+# vecteur2 = Vecteur4D([1, 2, 3, 4])
+# print("v1 + v2 = ", vecteur1 + vecteur2)
+# print("v1 - v2 = ", vecteur1 - vecteur2)
+# print("v1 * v2 = ", vecteur1 * vecteur2)
+# print("V2 / 2 = ", vecteur2/2)
+
+# Exercice 14: surcharge d operateur d une classe
+class Carte:
+    """cette classe permet de definir une carte de jeu de carte par deux attributs
+    -symbol
+    -rang"""
+
+    def __init__(self, rang, symbole) -> None:
+        """constructeur de classe prend 2 parametres"""
+        self.rang = rang
+        self.symbole = symbole
+    
+    def __eq__(self, carte) -> bool:
+        """cette methode permet de comparer deux carte de part leurs symboles et leurs valeurs"""
+        if self.rang == carte.rang and self.symbole == carte.symbole:
+            return True
+        return False
+
+    def __lt__(self, carte) -> bool:
+        """cette methode permet de determiner l inegalite de deux cartes"""
+        if self.rang == carte.rang:
+            return self.symbole < carte.symbole
+        return self.rang < carte.rang
+    
+    def __str__(self) -> str:
+        return f"La carte est de rang {self.rang} et de symbole {self.symbole}"
+    
+enseignes = [chr(9824), chr(9825), chr(9826), chr(9827)]
+rangs = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10, "J": 11, "Q":12, "K": 13, "A": 14}
+trefle1, rang1 = enseignes[3], rangs["8"]
+coeur2, rang2 = enseignes[1], rangs["3"]
+pique3, rang3 = enseignes[0], rangs["8"]
+carte1 = Carte(rang1, trefle1)
+carte2 = Carte(rang2, coeur2)
+carte3 = Carte(rang3, pique3)
+print(carte1)
+print(carte2)
+print(carte3)
+print(carte1 > carte2)
+print(carte1 == carte3)
+
