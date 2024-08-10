@@ -451,17 +451,16 @@ class Carte:
     def __str__(self) -> str:
         return f"La carte est de rang {self.rang} et de symbole {self.symbole}"
     
-enseignes = [chr(9824), chr(9825), chr(9826), chr(9827)]
-rangs = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10, "J": 11, "Q":12, "K": 13, "A": 14}
-trefle1, rang1 = enseignes[3], rangs["8"]
-coeur2, rang2 = enseignes[1], rangs["3"]
-pique3, rang3 = enseignes[0], rangs["8"]
-carte1 = Carte(rang1, trefle1)
-carte2 = Carte(rang2, coeur2)
-carte3 = Carte(rang3, pique3)
-print(carte1)
-print(carte2)
-print(carte3)
-print(carte1 > carte2)
-print(carte1 == carte3)
-
+# enseignes = [chr(9824), chr(9825), chr(9826), chr(9827)]
+# rangs = {"2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10, "J": 11, "Q":12, "K": 13, "A": 14}
+# trefle1, rang1 = enseignes[3], rangs["8"]
+# coeur2, rang2 = enseignes[1], rangs["3"]
+# pique3, rang3 = enseignes[0], rangs["8"]
+# carte1 = Carte(rang1, trefle1)
+# carte2 = Carte(rang2, coeur2)
+# carte3 = Carte(rang3, pique3)
+# print(carte1)
+# print(carte2)
+# print(carte3)
+# print(carte1 > carte2)
+# print(carte1 == carte3)
