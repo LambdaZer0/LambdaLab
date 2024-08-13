@@ -87,7 +87,6 @@ class Point2d:
         self.coordonnee_y += ty 
 
 # serie 2:
-
 class Domino:
     """classe qui formalise un dominoau travers de ses deux faces A et B"""
     def __init__(self, val_a: int, val_b:int) -> None:
@@ -111,3 +110,25 @@ class Domino:
     def sommeFaces(self) -> int:
         """calcule de la somme des deux faces A et B du domino"""
         return self._face_a + self._face_b
+
+# serie 3:
+class CompteBancaire:
+    """cette classe definit un compte bancaire d une personne avec les attribus:
+    -numero de compte
+    -nom du titulaire du compte
+    -le solde initial
+    -solde en cours"""
+
+    def __init__(self, ch_num: str, ch_nom: str, solde_ini: float) -> None:
+        """contructeur de classe compte bancaire"""
+        self._numero = ch_num
+        self._titulaire = ch_nom
+        self._solde_ini = solde_ini
+        self._solde_en_cours = self._solde_ini
+    
+    def __repr__(self) -> str:
+        """methode pour affichage personnalise avec print"""
+        nl = '\n'
+        ch = f"numéro de compte : {self._numero}{nl}titulaire : {self._titulaire}{nl}solde en cours : {self._solde_en_cours}"
+        return ch
+    
