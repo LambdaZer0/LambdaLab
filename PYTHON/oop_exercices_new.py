@@ -117,7 +117,8 @@ class CompteBancaire:
     -numero de compte
     -nom du titulaire du compte
     -le solde initial
-    -solde en cours"""
+    -solde en cours
+    -listing comptable liste de tuples"""
 
     def __init__(self, ch_num: str, ch_nom: str, solde_ini: float) -> None:
         """contructeur de classe compte bancaire"""
@@ -125,6 +126,8 @@ class CompteBancaire:
         self._titulaire = ch_nom
         self._solde_ini = solde_ini
         self._solde_en_cours = self._solde_ini
+        self._listing = []
+        self._listing.append(("solde initial", self._solde_ini, self._solde_en_cours))
     
     def __repr__(self) -> str:
         """methode pour affichage personnalise avec print"""
@@ -132,3 +135,16 @@ class CompteBancaire:
         ch = f"numéro de compte : {self._numero}{nl}titulaire : {self._titulaire}{nl}solde en cours : {self._solde_en_cours}"
         return ch
     
+    def verser(self, montant:float) -> None:
+        """"cette methode permet d ajouter un montant au solde en cours"""
+        self._solde_en_cours += montant
+        self._listing.append(("versement", montant, self._solde_en_cours))
+
+    def retirer(self, montant:float) -> None:
+        """cette methode permet de retirer un montant du solde en cours"""
+        self._solde_en_cours -= montant
+        self._listing.append(("retrait", montant, self._solde_en_cours))
+    
+    def getListingEcriture(self) -> list:
+        """cette methode renvoie la liste des ecritures comptables"""
+        return self._listing
