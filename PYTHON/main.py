@@ -1,5 +1,6 @@
 from oop_exercises_s2 import Domino
 from oop_exercices_s3 import CompteBancaire, AccelerationDistance, Satellite
+from oop_exercises_s4 import Cercle
 
 # liste_dom = []
 # for x in range(0, 7):
@@ -87,11 +88,19 @@ from oop_exercices_s3 import CompteBancaire, AccelerationDistance, Satellite
 # print(tup_res)
 # print("la distance est de ", tup_res[1], "m")
 
-sat_zoe = Satellite(identifiant="zoe456", masse_kg=450, vitesse_ms=30)
-print(sat_zoe)
-print(sat_zoe.__dict__)
-print(sat_zoe.txtVitesseEnCours())
-varia = sat_zoe.appliquerImpulsion(500, 15)
-print(f"variation = {varia} m/s")
-print(sat_zoe.txtVitesseEnCours())
-print(f"énergie cinétique = {sat_zoe.energieCinetique()} joules")
+# sat_zoe = Satellite(identifiant="zoe456", masse_kg=450, vitesse_ms=30)
+# print(sat_zoe)
+# print(sat_zoe.__dict__)
+# print(sat_zoe.txtVitesseEnCours())
+# varia = sat_zoe.appliquerImpulsion(500, 15)
+# print(f"variation = {varia} m/s")
+# print(sat_zoe.txtVitesseEnCours())
+# print(f"énergie cinétique = {sat_zoe.energieCinetique()} joules")
+
+cc = Cercle(5)
+print(cc)
+print(cc.__dict__)
+sf_cc = cc.surface()
+print(f"la surface du cerle = {sf_cc}")
+cf_cc = cc.circonference()
+print(f"la circonférence du cercle = {cf_cc}")
