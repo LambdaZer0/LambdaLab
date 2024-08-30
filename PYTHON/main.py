@@ -1,6 +1,6 @@
 from oop_exercises_s2 import Domino
 from oop_exercices_s3 import CompteBancaire, AccelerationDistance, Satellite
-from oop_exercises_s4 import Cercle
+from oop_exercises_s4 import Cercle, CylindreDroit
 
 # liste_dom = []
 # for x in range(0, 7):
@@ -104,3 +104,13 @@ sf_cc = cc.surface()
 print(f"la surface du cerle = {sf_cc}")
 cf_cc = cc.circonference()
 print(f"la circonférence du cercle = {cf_cc}")
+
+cyl = CylindreDroit(5, 7)
+print(cyl)
+print(cyl.__dict__)
+af = cyl.aireFaceLaterale()
+print(f"aire de la face latérale du cylindre = {af}")
+aire_tot = cyl.aireTotale()
+print(f"aire totale du cylindre = {aire_tot}")
+vol = cyl.volume()
+print(f"volume du cylindre = {vol}")
