@@ -66,3 +66,28 @@ class ConeRevolution(CylindreDroit):
     
     def volume(self) -> float:
         return CylindreDroit.volume()/3
+
+class JeuDeCartes:
+    """classe qui gère un jeu de  52 cartes"""
+
+    atc_couleur = ("pique", "coeur", "carreau", "trèfle")
+    atc_valeur = (2, 3, 4, 5, 6, 7, 8, 9, 10, "valet", "dame", "roi", "as")
+    
+    def __init__(self) -> None:
+        """constructeur des 52 cartes
+        exemple : (4, 0) ->  4 de piques
+        (14, 2) -> As de carreau"""
+        self._listing = []
+        for coul in range(4):
+            for val in range(13):
+                carte = (val+2, coul)
+                self._listing.append(carte)
+
+    def getListing(self) -> list:
+        """listing des cartes"""
+        return self._listing
+    
+    def nomCarte(self, ca:tuple) -> str:
+        ch = f"carte {self.atc_valeur[ca[0] - 2]} de {self.atc_couleur[ca[1]]}"
+        return ch
+    

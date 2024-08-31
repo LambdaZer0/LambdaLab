@@ -1,6 +1,6 @@
 from oop_exercises_s2 import Domino
 from oop_exercices_s3 import CompteBancaire, AccelerationDistance, Satellite
-from oop_exercises_s4 import Cercle, CylindreDroit
+from oop_exercises_s4 import Cercle, CylindreDroit, JeuDeCartes
 
 # liste_dom = []
 # for x in range(0, 7):
@@ -114,3 +114,11 @@ from oop_exercises_s4 import Cercle, CylindreDroit
 # print(f"aire totale du cylindre = {aire_tot}")
 # vol = cyl.volume()
 # print(f"volume du cylindre = {vol}")
+
+mon_jeu = JeuDeCartes()
+print("dictionnaire des attribus =\n", mon_jeu.__dict__)
+les_cartes = mon_jeu.getListing()
+print("le contenu du jeu=\n", les_cartes)
+print("énumération du contenu du jeu=")
+for cpt, elem in enumerate(les_cartes):
+    print(cpt+1,":",elem, "=>", mon_jeu.nomCarte(elem))
