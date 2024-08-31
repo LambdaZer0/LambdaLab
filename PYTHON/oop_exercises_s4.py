@@ -51,3 +51,18 @@ class CylindreDroit(Cercle):
         """volume du cylindre"""
         vol = self.surface() * self._hauteur
         return vol
+    
+class ConeRevolution(CylindreDroit):
+    """Classe Cone heritant de la classe CylindreDroit"""
+
+    def __init__(self, rayon_base: float, hauteur: float) -> None:
+        CylindreDroit.__init__(self, rayon_base, hauteur)
+
+    def __repr__(self) -> str:
+        """affichage personnalise pour la fonction print"""
+        nl = "\n"
+        ch = f"la base est un cerle de rayon = {self._rayon}{nl}la hauteur est = {self._hauteur}"
+        return ch
+    
+    def volume(self) -> float:
+        return CylindreDroit.volume()/3
