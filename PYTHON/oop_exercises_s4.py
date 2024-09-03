@@ -1,4 +1,5 @@
 import math
+import random
 
 class Cercle:
     """cette classe definit un cercle avec :
@@ -91,3 +92,23 @@ class JeuDeCartes:
         ch = f"carte {self.atc_valeur[ca[0] - 2]} de {self.atc_couleur[ca[1]]}"
         return ch
     
+    def battreCartes(self) -> None:
+        """Methode permettant de melanger le jeu des cartes"""
+        # nombre de cartes restantes
+        nb_res = len(self._listing)
+        for x in range(nb_res):
+            # tirage au hasard de 2 emplacements dans la liste
+            h1, h2 = random.randrange(nb_res), random.randrange(nb_res)
+            self._listing[h1], self._listing[h2] = self._listing[h2], self._listing[h1]
+
+    def tirerCarte(self) -> tuple:
+        """tirer une carte du jeu"""
+        nb_res = len(self._listing)
+        if nb_res > 0:
+            # choisir la premiere carte du jeu
+            ca = self._listing[0]
+            # on retire la carte du jeu
+            del(self._listing[0])
+            return ca
+        else:
+            return None

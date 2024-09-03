@@ -119,6 +119,18 @@ mon_jeu = JeuDeCartes()
 print("dictionnaire des attribus =\n", mon_jeu.__dict__)
 les_cartes = mon_jeu.getListing()
 print("le contenu du jeu=\n", les_cartes)
-print("énumération du contenu du jeu=")
+print("énumération du contenu du jeu =")
 for cpt, elem in enumerate(les_cartes):
     print(cpt+1,":",elem, "=>", mon_jeu.nomCarte(elem))
+print("on mélange les cartes--------------")
+mon_jeu.battreCartes()
+print("énumération du contenu du jeu mélangé =")
+for cpt, elem in enumerate(les_cartes):
+    print(cpt+1,":",elem, "=>", mon_jeu.nomCarte(elem))
+print("tirage des 52 cartes----------------")
+for n in range(53):
+    ca = mon_jeu.tirerCarte()
+    if ca != None:
+        print("on a tiré a => ", mon_jeu.nomCarte(ca))
+    else:
+        print("le jeu est terminé")
