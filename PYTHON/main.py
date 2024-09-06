@@ -1,6 +1,7 @@
 from oop_exercises_s2 import Domino
 from oop_exercices_s3 import CompteBancaire, AccelerationDistance, Satellite
 from oop_exercises_s4 import Cercle, CylindreDroit, JeuDeCartes
+from oop_exercices_s5 import Txt4f
 
 # liste_dom = []
 # for x in range(0, 7):
@@ -115,22 +116,26 @@ from oop_exercises_s4 import Cercle, CylindreDroit, JeuDeCartes
 # vol = cyl.volume()
 # print(f"volume du cylindre = {vol}")
 
-mon_jeu = JeuDeCartes()
-print("dictionnaire des attribus =\n", mon_jeu.__dict__)
-les_cartes = mon_jeu.getListing()
-print("le contenu du jeu=\n", les_cartes)
-print("énumération du contenu du jeu =")
-for cpt, elem in enumerate(les_cartes):
-    print(cpt+1,":",elem, "=>", mon_jeu.nomCarte(elem))
-print("on mélange les cartes--------------")
-mon_jeu.battreCartes()
-print("énumération du contenu du jeu mélangé =")
-for cpt, elem in enumerate(les_cartes):
-    print(cpt+1,":",elem, "=>", mon_jeu.nomCarte(elem))
-print("tirage des 52 cartes----------------")
-for n in range(53):
-    ca = mon_jeu.tirerCarte()
-    if ca != None:
-        print("on a tiré a => ", mon_jeu.nomCarte(ca))
-    else:
-        print("le jeu est terminé")
+# mon_jeu = JeuDeCartes()
+# print("dictionnaire des attribus =\n", mon_jeu.__dict__)
+# les_cartes = mon_jeu.getListing()
+# print("le contenu du jeu=\n", les_cartes)
+# print("énumération du contenu du jeu =")
+# for cpt, elem in enumerate(les_cartes):
+#     print(cpt+1,":",elem, "=>", mon_jeu.nomCarte(elem))
+# print("on mélange les cartes--------------")
+# mon_jeu.battreCartes()
+# print("énumération du contenu du jeu mélangé =")
+# for cpt, elem in enumerate(les_cartes):
+#     print(cpt+1,":",elem, "=>", mon_jeu.nomCarte(elem))
+# print("tirage des 52 cartes----------------")
+# for n in range(53):
+#     ca = mon_jeu.tirerCarte()
+#     if ca != None:
+#         print("on a tiré a => ", mon_jeu.nomCarte(ca))
+#     else:
+#         print("le jeu est terminé")
+
+liste = [11.23, -11.23, +0.1234, -0.1234, +0.0, -0.0]
+for elem in enumerate(liste):
+    print(elem[1], "=>", Txt4f.ftPerso(elem[1]))
