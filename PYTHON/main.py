@@ -1,7 +1,7 @@
 from oop_exercises_s2 import Domino
 from oop_exercices_s3 import CompteBancaire, AccelerationDistance, Satellite
 from oop_exercises_s4 import Cercle, CylindreDroit, JeuDeCartes
-from oop_exercices_s5 import Txt4f
+from oop_exercices_s5 import Txt4f, Matrice3x3
 
 # liste_dom = []
 # for x in range(0, 7):
@@ -136,6 +136,17 @@ from oop_exercices_s5 import Txt4f
 #     else:
 #         print("le jeu est terminé")
 
-liste = [11.23, -11.23, +0.1234, -0.1234, +0.0, -0.0]
-for elem in enumerate(liste):
-    print(elem[1], "=>", Txt4f.ftPerso(elem[1]))
+# liste = [11.23, -11.23, +0.1234, -0.1234, +0.0, -0.0]
+# for elem in enumerate(liste):
+#     print(elem[1], "=>", Txt4f.ftPerso(elem[1]))
+
+mat = Matrice3x3(11.23, -12.89, 13.78, -21.45, 22.66, -23.71, +31.41, -32.41, 33.87)
+print("affichage de l'instance")
+print(mat)
+print("affichage 4 digites")
+print(mat.txt4chiffres())
+print("affichage d'une matrice identité")
+mat = Matrice3x3.sm_idendite()
+print(mat)
+print("affichage 4 digites")
+print(mat.txt4chiffres())
