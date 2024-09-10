@@ -1,7 +1,7 @@
 from oop_exercises_s2 import Domino
 from oop_exercices_s3 import CompteBancaire, AccelerationDistance, Satellite
 from oop_exercises_s4 import Cercle, CylindreDroit, JeuDeCartes
-from oop_exercices_s5 import Txt4f, Matrice3x3
+from oop_exercices_s5 import Txt4f, Matrice3x3, Matrice3x1
 
 # liste_dom = []
 # for x in range(0, 7):
@@ -140,13 +140,45 @@ from oop_exercices_s5 import Txt4f, Matrice3x3
 # for elem in enumerate(liste):
 #     print(elem[1], "=>", Txt4f.ftPerso(elem[1]))
 
-mat = Matrice3x3(11.23, -12.89, 13.78, -21.45, 22.66, -23.71, +31.41, -32.41, 33.87)
+# mat = Matrice3x3(11.23, -12.89, 13.78, -21.45, 22.66, -23.71, +31.41, -32.41, 33.87)
+# print("affichage de l'instance")
+# print(mat)
+# print("affichage 4 digites")
+# print(mat.txt4chiffres())
+# print("affichage d'une matrice identité")
+# mat = Matrice3x3.sm_idendite()
+# print(mat)
+# print("affichage 4 digites")
+# print(mat.txt4chiffres())
+
+# mat = Matrice3x1(1.0, 2.0, 3.0)
+# print("affichage de l'instance")
+# print(mat)
+# print("affichage formaté de l'instance")
+# print(mat.txt4chiffres())
+# print("contenu de la première ligne")
+# print(mat.ligMat(1))
+# print("contenu de la seconde ligne")
+# print(mat.ligMat(2))
+# print("contenu de la troisième ligne")
+# print(mat.ligMat(3))
+# print("contenu de la colonne")
+# print(mat.colMat())
+
+
+mat3x3 = Matrice3x3(11.0, 12.0, 13.0, 21.0, 22.0, 23.0, 31.0, 32.0, 33.0)
 print("affichage de l'instance")
-print(mat)
+print(mat3x3)
 print("affichage 4 digites")
-print(mat.txt4chiffres())
-print("affichage d'une matrice identité")
-mat = Matrice3x3.sm_idendite()
-print(mat)
+print(mat3x3.txt4chiffres())
+mat3x1 = Matrice3x1(1.0, 2.0, 3.0)
+print("affichage de l'instance")
+print(mat3x1)
 print("affichage 4 digites")
-print(mat.txt4chiffres())
+print(mat3x1.txt4chiffres())
+print("multiplication matricielle")
+mat_res = Matrice3x3.sm_multiplier(mat3x3, mat3x1)
+print("affichage de l'instance")
+print(mat_res)
+print("affichage 4 digites")
+print(mat_res.txt4chiffres())
