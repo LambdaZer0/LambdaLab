@@ -77,6 +77,14 @@ class Matrice3x3:
         """obtenir une ligne de la matrice"""
         return self._matrice[ind_1_3 - 1]
     
+    def colMat(self, ind_1_3:int) -> list:
+        """obtenir une colonne de la matrice et retounee sous forme d une liste"""
+        liste_retour = []
+        liste_retour.append(self.ligMat(1)[ind_1_3-1])
+        liste_retour.append(self.ligMat(2)[ind_1_3-1])
+        liste_retour.append(self.ligMat(3)[ind_1_3-1])
+        return liste_retour
+    
     def _produitListeParListe(liste1:list, liste2:list) -> float:
         """produit list1 par liste2 qui sont des listes une dimension"""
         # print(liste1)
@@ -87,6 +95,22 @@ class Matrice3x3:
         for xx in produit:
             cp += xx
         return cp
+    
+    def multiplier(self, mat3x3) -> None:
+        """multiplier la matrice 3x3 avec une autre matrice 3x3 fournie en parametre"""
+        c11 = Matrice3x3._produitListeParListe(self.ligMat(1),mat3x3.colMat(1))
+        c12 = Matrice3x3._produitListeParListe(self.ligMat(1),mat3x3.colMat(2))
+        c13 = Matrice3x3._produitListeParListe(self.ligMat(1),mat3x3.colMat(3))
+        c21 = Matrice3x3._produitListeParListe(self.ligMat(2),mat3x3.colMat(1))
+        c22 = Matrice3x3._produitListeParListe(self.ligMat(2),mat3x3.colMat(2))
+        c23 = Matrice3x3._produitListeParListe(self.ligMat(2),mat3x3.colMat(3))
+        c31 = Matrice3x3._produitListeParListe(self.ligMat(3),mat3x3.colMat(1))
+        c32 = Matrice3x3._produitListeParListe(self.ligMat(3),mat3x3.colMat(2))
+        c33 = Matrice3x3._produitListeParListe(self.ligMat(3),mat3x3.colMat(3))
+        self._matrice.clear()
+        self._matrice.append([c11, c12, c13])
+        self._matrice.append([c21, c22, c23])
+        self._matrice.append([c31, c32, c33])
     
 
 class Matrice3x1:
