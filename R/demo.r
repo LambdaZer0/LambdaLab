@@ -15,3 +15,5 @@ only_automatic <- which(miss_mtcars$am==0)
 some_rows <- sample(only_automatic, 4)
 miss_mtcars$qsec[some_rows] <- NA
 md.pattern(miss_mtcars)
+mean(miss_mtcars)
+mean(miss_mtcars, na.rm = TRUE)
