@@ -9,19 +9,16 @@ nb_op= int(input("Nombre d'opérations: "))
 for i in range(nb_op):
     li.append((randrange(inf, sup), randrange(inf, sup)))
 
-print("Voici la liste des opérations :")
-for x in li:
-    print(f"{x[0]} + {x[1]} = ")
-
 lo = []
+lc = []
 for x in li:
     lo.append(x[0] + x[1])
-
-lc = []
-for i in range(nb_op):
-    op = int(input(f"Opération{i} = "))
+    op = int(input(f"{x[0]} + {x[1]} = "))
     lc.append(op)
 
+
+for x in li:
+    lo.append(x[0] + x[1])
 
 rep = input("Afficher le résultat ?")
 

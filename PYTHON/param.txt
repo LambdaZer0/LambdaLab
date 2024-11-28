@@ -1,0 +1,3 @@
+{
+'working_dir':'/home/lambda/Documents/extract_form_pdf/'
+}
