@@ -83,8 +83,56 @@ class Cercle:
         """calcul du périmètre du cerle"""
         return round(2*pi*self.r, 2)
     
-cercle_1 = Cercle(3, 4, 5)
-print(cercle_1.afficher_propriete())
-print(f"Le périmètre du cercle_1 est : {cercle_1.perimetre()}")
-print(f"La surface du cercle_1 est : {cercle_1.surface()}")
+# cercle_1 = Cercle(3, 4, 5)
+# print(cercle_1.afficher_propriete())
+# print(f"Le périmètre du cercle_1 est : {cercle_1.perimetre()}")
+# print(f"La surface du cercle_1 est : {cercle_1.surface()}")
+
+# Exercice 5: Création d'une classe contenant plusieurs méthodes
+class Operation:
+    def __init__(self, x:int, y: int) -> None:
+        self.x = x
+        self.y = y
     
+    def somme(self) -> int:
+        return self.x + self.y
+    
+    def multiplication(self) -> int:
+        return self.x * self.y
+    
+    def division(self) -> float:
+        if self.y != 0:
+            return round(self.x/self.y, 2)
+        else:
+            print("Division de x par y est impossible!")
+            return None
+# operation_1 = Operation(3, 2)
+# print(f"L'opération somme donne: {operation_1.somme()}")
+# print(f"L'opération multiplication donne: {operation_1.multiplication()}")
+# print(f"L'opération division donne: {operation_1.division()}")
+# operation_1.y = 0
+# operation_1.division()
+
+# Exercice 6: Création d'une classe contenant plusieurs méthodes
+class Personne:
+    """cette classe permet de définir une personne par un nom, age et sexe"""
+    def __init__(self, nom:str, age:int, sexe:str) -> None:
+        self.nom = nom
+        self.age = age
+        self.sexe = sexe
+    
+    def presenter(self) -> None:
+        print(f"Mon nom est {self.nom}, j'ai {self.age} ans et je suis un(e) {self.sexe}")
+        return None
+    
+    def estAdulte(self) -> bool:
+        if self.age >= 18:
+            return True
+        else:
+            return False
+
+personne_1 = Personne('Aboubakr', 36, "homme")
+personne_1.presenter()
+print(personne_1.estAdulte())
+        
+
