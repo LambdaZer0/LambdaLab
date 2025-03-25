@@ -131,8 +131,24 @@ class Personne:
         else:
             return False
 
-personne_1 = Personne('Aboubakr', 36, "homme")
-personne_1.presenter()
-print(personne_1.estAdulte())
-        
+# personne_1 = Personne('Aboubakr', 36, "homme")
+# personne_1.presenter()
+# print(personne_1.estAdulte())
 
+# Exercice 7: Héritage d'une classe parent
+class Etudiant(Personne):
+    """sous classe étudiant hérite de la classe Personne ses attributs + un attribut niveau"""
+    def __init__(self, nom:str, age:int, sexe:str, niveau:str) -> None:
+        """constructeur de la classe etudiant utilise le constructeur de la classe Personne"""
+        super().__init__(nom, age, sexe)
+        self.niveau = niveau
+    def inscription(self, etudiants_inscrits:list) -> None:
+        """methode permet d'ajout un étudiant à une liste à chaque nouvelle inscription"""
+        etudiants_inscrits.append((self.nom, self.age, self.sexe, self.niveau))
+
+etudiants_inscrits = []
+etudiant1 = Etudiant("Fabrice", 17, "homme", "seconde")
+etudiant1.inscription(etudiants_inscrits)
+etudiant2 = Etudiant("Julie", 8, "femme", "primaire")
+etudiant2.inscription(etudiants_inscrits)
+print(f"Les étudiants inscrits aux cours sont: {etudiants_inscrits}")
