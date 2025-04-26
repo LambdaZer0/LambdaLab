@@ -1,5 +1,6 @@
 """série d'exercices du livre '30 exercices en programmation orientée objet en python'"""
 from math import *
+import random
 
 #Exercice 1: création d'une classe simple, appel de méthodes
 class Biscuit:
@@ -151,4 +152,59 @@ etudiant1 = Etudiant("Fabrice", 17, "homme", "seconde")
 etudiant1.inscription(etudiants_inscrits)
 etudiant2 = Etudiant("Julie", 8, "femme", "primaire")
 etudiant2.inscription(etudiants_inscrits)
-print(f"Les étudiants inscrits aux cours sont: {etudiants_inscrits}")
+# print(f"Les étudiants inscrits aux cours sont: {etudiants_inscrits}")
+
+# Exercice 8: Création d'une classe dé avec plusieurs méthodes
+class De:
+    def __init__(self, resultat=0) -> None:
+        """constructeur de la classe dé avec le resultat obtenu à chaque lancé (par défaut 0)"""
+        self.resultat = resultat
+
+    def lancer_un_de(self) -> int:
+        """methode simule le lancé d'un dé"""
+        self.resultat = random.randint(1, 6)
+        return self.resultat
+
+    def affichage_points(self) -> None:
+        """methode affich"""
+        print(f"Le nombre de points obtenu est : {self.resultat}")
+
+# lancement_1 = De()
+# lancement_1.lancer_un_de()
+# lancement_1.affichage_points()
+
+# Exercice 9: Héritage - Création d'une classe parente et d'une classe enfant
+class Vehicule:
+    """ Classe parent """
+    def __init__(self, marque:str, vitesse_i=0) -> None:
+        """ constructeur de la classe véhicule """
+        self.marque = marque
+        self.vitesse = vitesse_i 
+    
+    def acceleration(self, v) -> None:
+        """ methode pour augmenter la vitesse du véhicule """
+        self.vitesse += v
+    
+    def deceleration(self, v) -> None:
+        """ methode pour diminuer la vitesse du véhicule """
+        self.vitesse -= v
+    
+    def afficher_vitesse(self) -> None:
+        """ methode pour afficher la vitesse du véhicule """
+        print(f"Votre vitesse actuelle est : {self.vitesse}km/h")
+    
+class Voiture(Vehicule):
+    """ sous classe de la classe vehicule """
+    def __init__(self, marque, vitesse_i=0):
+        super().__init__(marque, vitesse_i)
+    
+    def klaxonner(self) -> None:
+        """ methode pour afficher un message de klaxon """
+        print("tuuut !")
+
+voiture_1 = Voiture("Peugeot 208", 10.5)
+print(f"La vitesse initiale de la voiture est : {voiture_1.vitesse}")
+voiture_1.acceleration(50)
+voiture_1.deceleration(15)
+voiture_1.afficher_vitesse()
+voiture_1.klaxonner()
