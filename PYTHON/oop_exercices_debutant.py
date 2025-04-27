@@ -202,9 +202,47 @@ class Voiture(Vehicule):
         """ methode pour afficher un message de klaxon """
         print("tuuut !")
 
-voiture_1 = Voiture("Peugeot 208", 10.5)
-print(f"La vitesse initiale de la voiture est : {voiture_1.vitesse}")
-voiture_1.acceleration(50)
-voiture_1.deceleration(15)
-voiture_1.afficher_vitesse()
-voiture_1.klaxonner()
+# voiture_1 = Voiture("Peugeot 208", 10.5)
+# print(f"La vitesse initiale de la voiture est : {voiture_1.vitesse}")
+# voiture_1.acceleration(50)
+# voiture_1.deceleration(15)
+# voiture_1.afficher_vitesse()
+# voiture_1.klaxonner()
+
+# Exercice 10 : Création d'une classe contenant plusieurs méthodes (intermédiaire)
+class Employe:
+    """ classe employe 4 attribus
+    nom, fonction, salaire et nombre d'heures """
+
+    def __init__(self, nom:str, fonction:str, salaire:float, heures=0) -> None:
+        """ constructeur de classe """
+        self.nom = nom
+        self.fonction = fonction
+        self.salaire = salaire
+        self.heures = heures
+
+    def travailler(self, nombre_heures):
+        """ methode pour ajouter des heures et afficher le nombre total des heures travaillées """
+        self.heures += nombre_heures
+        print(f"Le salarié {self.nom} a travaillé {self.heures} heures.")
+    
+    def info_salaire(self):
+        """ methode pour afficher le salaire de l'employé """
+        print(f"Le salarié {self.nom} touche un salaire de {self.salaire} euros.")
+    
+    def donner_augmentation(self, augmentation):
+        """ methode pour donner une augmentation et afficher le nouveau salaire """
+        self.salaire += augmentation
+        print(f"Le salarié {self.nom} a reçu une augmentation de {augmentation} euros, ce qui lui fait un salaire de {self.salaire} euros.")
+    
+    def info_fonction(self):
+        """ methode pour afficher la fonction de l'employer """
+        print(f"Le salarié {self.nom} travaille en tant que {self.fonction}.")
+
+employe_1 = Employe("Julien", "Ingénieur", 4000)
+employe_1.travailler(8)
+employe_1.info_salaire()
+employe_1.donner_augmentation(600)
+employe_1.info_fonction()
+
+
